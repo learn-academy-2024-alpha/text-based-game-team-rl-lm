@@ -121,3 +121,76 @@ end
   else user_response5 == nil
     puts "that dinner make you go crazy? matches is the only logical option here!!"
   end
+
+  "#{user_name} we made it out of the cave, now we are on the north side of the island. i see a beach down below the cliffs what can we use to get there? 'rope' 'first aid kit' or the 'flare gun' ".each_char do |char|
+    putc char
+    sleep 0.02
+  end
+  puts "\n"
+
+  user_response6 = gets.chomp.downcase
+
+  def cliff_adventure(user_name)
+    rope_message = "sounds dangerous #{user_name} but it is our best bet of getting off this rock!"
+    rope_message.each_char do |char|
+      putc char
+      sleep 0.05
+    end
+    "\n"
+  end
+
+  if user_response6 == "rope"
+    puts cliff_adventure(user_name)
+  else user_response6 == nil
+    puts "unfortunately i think our only option is using the rope to propel down the cliff"
+  end
+
+ 
+  "We made it down to the beach #{user_name}, but i scraped up my leg pretty bad on the way down anything in our bag that might help? 'first aid kit' or the 'flare gun' ".each_char do |char|
+  putc char
+  sleep 0.02
+end
+puts "\n"
+
+user_response7 = gets.chomp.downcase
+
+def first_aid(user_name)
+  aid_message = "i forgot we had that #{user_name} can you fix me up so we can get off this rock!"
+  aid_message.each_char do |char|
+    putc char
+    sleep 0.05
+  end
+  "\n"
+end
+
+if user_response7 == "first aid kit"
+  puts first_aid(user_name)
+else user_response7 == nil
+  puts "What are you trying to do to me #{user_name}?? Put me out of my misery?? Get the first aid kit"
+end
+
+
+"#{user_name} I see a helicopter its probably looking for us. What do we have left to signal it? 'flare gun'".each_char do |char|
+  putc char
+  sleep 0.02
+end
+puts "\n"
+
+user_response8 = gets.chomp.downcase
+
+def flare_escape(user_name)
+  escape_message = "#{user_name} It saw the flare. We're saved!!! We can finally get off this rock!"
+  escape_message.each_char do |char|
+    putc char
+    sleep 0.05
+  end
+  "\n"
+end
+
+if user_response8 == "flare gun"
+  puts flare_escape(user_name)
+else user_response8 == nil
+  puts "#{user_name}?? Just give the flare gun I've had enough of this rock"
+end
+
+puts "Congrats on surviving and escaping. Thanks for playing"
