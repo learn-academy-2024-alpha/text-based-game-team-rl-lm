@@ -36,7 +36,13 @@ else user_response == nil
   puts wake_up(user_name) 
 end
 
-puts "#{user_name} what should we do? 'search the wreckage' or 'explore the wilderness'?"
+"#{user_name} what should we do? 'search the wreckage' or 'explore the wilderness'?".each_char do |char|
+  putc char
+  # sleep 0.05
+end
+puts "\n"
+
+
 user_response2 = gets.chomp.downcase
 
 if user_response2 == "search the wreckage"
@@ -58,3 +64,60 @@ elsif user_response3 == "use flare gun"
 else user_response3 == nil 
   puts "Are you okay? lets just start by using the compass."
 end
+
+
+puts "#{user_name} going north is smart but im getting hungry. looks like we have a couple options. I see a stream of water and I see a tree with fruit. what should we use the 'fishing pole' to catch our dinner. or should we use the 'knife' to cut down some fruit?"
+user_response4 = gets.chomp.downcase
+
+def fish_dinner(user_name)
+  dinner_message = "Lets do it #{user_name}!
+    bop bop bop. SWISH. #{user_name} you got one! reel it in! and lets eat!"
+  dinner_message.each_char do |char|
+    putc char
+    # sleep 0.05
+  end
+  "\n"
+end
+
+def fruit_dinner(user_name)
+  fruit_message = "Sound good #{user_name}! you start climbing and ill catch the fruit below! im hungry!!"
+  fruit_message.each_char do |char|
+    putc char
+    # sleep 0.05
+  end
+  "\n"
+end
+
+    if user_response4 == "fishing pole"
+      puts fish_dinner(user_name)
+    elsif user_response4 == "knife"
+      puts fruit_dinner(user_name)
+    else user_response4 == nil
+      puts "you're talking crazy.. you just go catch some fish and ill get some fruit!"
+    end
+
+
+"#{user_name} lets keep on moving and get off this rock! it looks like were going to have to go through this cave to get where we want to go. its pretty dark though what do we have left to use to lighten this cave up? 'flare gun' 'matches' 'rope' and the 'first aid kit' ".each_char do |char|
+    putc char
+    sleep 0.02
+  end
+  puts "\n"
+  user_response5 = gets.chomp.downcase
+
+
+  def cave_adventure(user_name)
+    matches_message = "good idea! lets use the matches with this branch of leaves to light the way!"
+    matches_message.each_char do |char|
+      putc char
+      sleep 0.05
+    end
+    "\n"
+  end
+
+
+
+  if user_response5 == "matches"
+    puts cave_adventure(user_name)
+  else user_response5 == nil
+    puts "that dinner make you go crazy? matches is the only logical option here!!"
+  end
